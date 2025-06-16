@@ -1,0 +1,36 @@
+module Intruction_Mem(clk, reset, read_address, instruction_out);
+  module Intruction_Memory(clk, reset, read_address, instructions_out);
+  input clk, reset;
+  input [31:0] read_address;
+  output reg [31:0] instructions_out;
+  integer k;
+  reg [31:0] IMemory[63:0];
+  assign instructions_out =IMemory[read_address];
+  always @(posedge clk or posedge reset)
+    begin
+      if(reset)
+        begin
+          for(k= 0; k<64; k=k+1) 
+            begin
+              IMemory[k] <= 32'b00;
+            end
+        end
+      else
+        IMemory[0] = 32'b00000000000000000000000000000000;
+        IMemory[4] = 32'b0000000_11001_10000_000_01101_0110011;
+        IMemory[8] = 32'b0100000_00011_01000_000_00101_0110011;
+        IMemory[12] = 32'b0000000_00011_00010_111_00001_0110011;
+        IMemory[16] = 32'b0000000_00101_00011_110_00100_0110011;
+      
+        IMemory[20] = 32'b000000000011_10101_000_10110_0010011;
+        IMemory[24] = 32'b000000000001_01000_110_01001_0010011;
+      
+        IMemory[28] = 32'b000000001111_00101_010_01000_0000011;
+        IMemory[32] = 32'b000000000011_00011_010_01001_0000011;
+      
+        IMemory[36] = 32'b0000000_01111_00101_010_01100_0100011;
+        IMemory[40] = 32'b0000000_01110_00110_010_01010_0100011;
+      
+        IMemory[44] = 32'h00948663; 
+    end
+endmodule
