@@ -1,4 +1,4 @@
-module Intruction_Mem(clk, reset, read_address, instruction_out);
+module Instruction_Mem(clk, reset, read_address, instruction_out);
   module Intruction_Memory(clk, reset, read_address, instructions_out);
   input clk, reset;
   input [31:0] read_address;
