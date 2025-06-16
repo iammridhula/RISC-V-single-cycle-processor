@@ -14,7 +14,7 @@ module Reg_File(clk, reset, RegWrite, Rs1, Rs2, Rd, Write_data, read_data1, read
     Registers [5] = 1;
     Registers [6] = 44;
     Registers [7] = 4;
-    Registers [8] = 2;I
+    Registers [8] = 2;
     Registers [9] = 1;
     Registers [10] = 23;
     Registers [11] = 4;
