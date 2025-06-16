@@ -17,7 +17,7 @@ module top(clk, reset);
   
   Control_Unit Control_Unit(.instruction(instruction_top[6:0]), .Branch(branch_top), .MemRead(MemRead_top), .MemtoReg(MemtoReg_top), .ALUOP(ALUOp_top), .MemWrite(MemWrite_top), .ALUSrc(ALUSrc_top), .RegWrite(RegWrite_top));
  
-  ALU_Control ALU_Control(.ALUOp(ALUOp_top), .fun7(instruction_top[30]), .fun3(instruction_top [14:12]), Control_out(control_top)); 
+  ALU_Control ALU_Control(.ALUOp(ALUOp_top), .ip1(instruction_top[30]), .ip2(instruction_top [14:12]), Control_out(control_top)); 
   
   ALU_unit ALU(.A(Rd1_top), .B(mux1_top), .Control_in(control_top), .ALU_Result(address_top), .zero(zero_top));
  
